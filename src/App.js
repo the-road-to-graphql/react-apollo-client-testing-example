@@ -121,4 +121,6 @@ const Select = ({ id, isSelected, toggleSelectRepository }) => (
   </button>
 );
 
+export { Star, STAR_REPOSITORY };
+
 export default App;
