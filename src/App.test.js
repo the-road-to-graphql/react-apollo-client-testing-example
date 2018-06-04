@@ -6,7 +6,11 @@ import { spy } from 'sinon';
 import './test/setup';
 import clientMock from './test/client-mock';
 
-import { Star, STAR_REPOSITORY } from './App';
+import App, {
+  Star,
+  STAR_REPOSITORY,
+  GET_REPOSITORIES_OF_ORGANIZATION,
+} from './App';
 
 describe('Star', () => {
   it('calls the mutate method on Apollo Client', () => {
@@ -29,5 +33,28 @@ describe('Star', () => {
     expect(clientMock.mutate.getCall(0).args[0].mutation).toEqual(
       STAR_REPOSITORY,
     );
+
+    clientMock.mutate.restore();
+  });
+});
+
+describe('App', () => {
+  it('calls the query function method on Apollo Client', () => {
+    spy(clientMock, 'watchQuery');
+
+    const wrapper = mount(
+      <ApolloProvider client={clientMock}>
+        <App />
+      </ApolloProvider>,
+    );
+
+    // expect(clientMock.query.calledOnce).toEqual(true);
+    expect(clientMock.watchQuery.calledOnce).toEqual(true);
+
+    expect(clientMock.watchQuery.getCall(0).args[0].query).toEqual(
+      GET_REPOSITORIES_OF_ORGANIZATION,
+    );
+
+    clientMock.watchQuery.restore();
   });
 });

@@ -35,6 +35,7 @@ const STAR_REPOSITORY = gql`
 const App = () => (
   <Query query={GET_REPOSITORIES_OF_ORGANIZATION}>
     {({ data: { organization }, loading }) => {
+      console.log(organization);
       if (loading || !organization) {
         return <div>Loading ...</div>;
       }
@@ -121,6 +122,6 @@ const Select = ({ id, isSelected, toggleSelectRepository }) => (
   </button>
 );
 
-export { Star, STAR_REPOSITORY };
+export { Star, STAR_REPOSITORY, GET_REPOSITORIES_OF_ORGANIZATION };
 
 export default App;
