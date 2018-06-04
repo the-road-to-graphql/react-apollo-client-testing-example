@@ -39,7 +39,7 @@ describe('Star', () => {
 });
 
 describe('App', () => {
-  it('calls the query function method on Apollo Client', () => {
+  it('calls the query method on Apollo Client', () => {
     spy(clientMock, 'watchQuery');
 
     const wrapper = mount(
@@ -48,7 +48,6 @@ describe('App', () => {
       </ApolloProvider>,
     );
 
-    // expect(clientMock.query.calledOnce).toEqual(true);
     expect(clientMock.watchQuery.calledOnce).toEqual(true);
 
     expect(clientMock.watchQuery.getCall(0).args[0].query).toEqual(
