@@ -57,4 +57,29 @@ describe('App', () => {
 
     clientMock.watchQuery.restore();
   });
+
+  it('renders correctly after the query method on Apollo Client executed', () => {
+    const wrapper = mount(
+      <ApolloProvider client={clientMock}>
+        <App />
+      </ApolloProvider>,
+    );
+
+    expect(
+      wrapper
+        .find('Repositories')
+        .find('RepositoryList')
+        .find('li').length,
+    ).toEqual(2);
+
+    expect(
+      wrapper.find('Repositories').props().repositories.edges[0].node
+        .id,
+    ).toEqual('1');
+
+    expect(
+      wrapper.find('Repositories').props().repositories.edges[1].node
+        .id,
+    ).toEqual('2');
+  });
 });

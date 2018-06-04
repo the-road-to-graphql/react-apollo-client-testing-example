@@ -35,7 +35,6 @@ const STAR_REPOSITORY = gql`
 const App = () => (
   <Query query={GET_REPOSITORIES_OF_ORGANIZATION}>
     {({ data: { organization }, loading }) => {
-      console.log(organization);
       if (loading || !organization) {
         return <div>Loading ...</div>;
       }
