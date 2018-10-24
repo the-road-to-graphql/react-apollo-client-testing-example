@@ -1,6 +1,6 @@
 # react-apollo-client-testing-example
 
-[![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/)
+[![Build Status](https://travis-ci.org/the-road-to-graphql/react-apollo-client-testing-example.svg?branch=master)](https://travis-ci.org/the-road-to-graphql/react-apollo-client-testing-example) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/)
 
 A minimal React application using Apollo Client with a **mocked** GitHub's GraphQL API by implementing an own GraphQL schema. [Read more about it here.](https://www.robinwieruch.de/graphql-server-mock-apollo-client/) In addition, it uses the mocked GraphQL server to conduct tests for Apollo's Query and Mutation components. [Read more about it here.](https://www.robinwieruch.de/react-apollo-client-testing)
 
