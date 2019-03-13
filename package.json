@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-adapter-react-16": "^1.11.0",
     "sinon": "^7.0.0"
   },
   "browserslist": [
